@@ -1,5 +1,6 @@
 /* ============================================================================
  * Variables
+ * (These....)
  * ----------------------------------------------------------------------------
  */
 
@@ -16,6 +17,7 @@ var screenHeight;
 
 /* ----------------------------------------------------------------------------
  * Executing Game Code
+ * (this section....)
  * ----------------------------------------------------------------------------
  */
 
@@ -26,6 +28,7 @@ setInterval(gameLoop, 1000/30);
 
 /* ============================================================================
  * Game Functions
+ * (This section....)
  * ----------------------------------------------------------------------------
  */
 
@@ -38,6 +41,8 @@ function gameInitialize() {
     
     canvas.width = screenWidth;
     canvas.height = screenHeight;
+    
+    document.addEventListener("keydown", keyboardHandler);
 }
 
 function gameLoop() {
@@ -54,6 +59,7 @@ function gameDraw() {
 
 /* ============================================================================
  * Snake Functions
+ * (This section....)
  * ----------------------------------------------------------------------------
  */
 
@@ -61,7 +67,7 @@ function snakeInitialize() {
     snake = [];
     snakeLength = 5;
     snakeSize = 20;
-    snakeDirection = "right";
+    snakeDirection = "down";
     
     for(var index = snakeLength - 1; index >= 0; index--) {
         snake.push( {
@@ -82,10 +88,12 @@ function snakeUpdate(){
     var snakeHeadX = snake[0].x;
     var snakeHeadY = snake[0].y;
     
-    if() {
-        
+    if(snakeDirection == "down") {
+        snakeHeadY++;
     }
-    
+    else if(snakeDirection == "right") {
+        snakeHeadX++;
+    }
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
@@ -94,6 +102,7 @@ function snakeUpdate(){
 
 /*-----------------------------------------------------------------------------
  * Food Functions
+ * (This section....)
  * ----------------------------------------------------------------------------
  */
 
@@ -116,4 +125,19 @@ function setFoodPosition() {
     
     food.x = randomX;
     food.y = randomY;
+}
+/*-----------------------------------------------------------------------------
+ * Input Functions
+ * (This Section....)
+ * ----------------------------------------------------------------------------
+ */
+function keyboardHandler(event) {
+    console.log(event);
+    
+    if(event.keyCode == "39") {
+        snakeDirection = "right";
+    }
+    else if() {
+        
+    }
 }

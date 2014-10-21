@@ -5,4 +5,7 @@ body{
 
 #game-screen{
     display: block;
+    border-style: groove;
+    border-width: 15px;
+    border-color: silver;
 }
