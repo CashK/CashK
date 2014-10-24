@@ -39,8 +39,8 @@ function gameInitialize() {
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
     
-    canvas.width = screenWidth;
-    canvas.height = screenHeight;
+    canvas.width = screenWidth - 30;
+    canvas.height = screenHeight - 30;
     
     document.addEventListener("keydown", keyboardHandler);
 }
@@ -65,7 +65,7 @@ function gameDraw() {
 
 function snakeInitialize() {
     snake = [];
-    snakeLength = 1;
+    snakeLength = 3;
     snakeSize = 20;
     snakeDirection = "down";
     
@@ -94,12 +94,15 @@ function snakeUpdate(){
     else if(snakeDirection == "right") {
         snakeHeadX++;
     }
-    if(snakeDirection == "left") {
+    else if(snakeDirection == "left") {
         snakeHeadX--;
     }
     else if(snakeDirection == "up") {
         snakeHeadY--;
     }
+    
+    checkFoodCollisions();
+    
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
@@ -146,15 +149,22 @@ function keyboardHandler(event) {
     else if(event.keyCode == "40" && snakeDirection !="up") {
         snakeDirection = "down";
     }    
-        if(event.keyCode == "37" && snakeDirection !="right") {
+    else if(event.keyCode == "37" && snakeDirection !="right") {
         snakeDirection = "left";    
     }
     else if(event.keyCode == "38" && snakeDirection !="down") {
         snakeDirection = "up";
     }
-        snake.push({
-            x: 0,
-            y: 0
-        });
-        snakeLength++;
+}
+
+/*-----------------------------------------------------------------------------
+ * Collision Handling
+ * (This Section....)
+ * ----------------------------------------------------------------------------
+ */
+
+function checkFoodCollisions() {
+    if(snakeHeadX == food.x) {
+        
     }
+}
