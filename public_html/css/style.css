@@ -1,11 +1,16 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-#game-screen{
+#game-screen {
     display: block;
     border-style: groove;
     border-width: 15px;
     border-color: silver;
+}
+
+#gameOver {
+    position: absolute;
+    visibility: hidden;
 }

@@ -4,26 +4,47 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
+<!--HTML-->
 <html>
     <!--This is my main screen, all my code will be displayed on the site page
     this represents.-->
+    
+    <!--Head-->
+    <!--This is a tag which displays all of the information at the top of what-
+    ever tab I have open.-->
     <head>
         <title>Kobi Cash - Snake JS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
+    <!--Head-->
+    
+    <!--Body-->
     <body>
+        <!--This is my section tag, which...-->
+        <section id="gameOver">
+            <h1 class="title">|-GAME OVER!-|</h1>
+            <h3 id="restartButton">Restart?</h3>
+        </section>
+        <!--Section-->
+        
         <!--Canvas-->
         <!--This is my game canvas. All of the code created in my snake.js 
         folder will be linked to this page, in order to be displayed, using 
         this tag.-->
         <canvas id="game-screen"></canvas>
         <!--Canvas-->
+        
         <!--Script-->
         <!--This is my script tag, which links my snake.js folder to my 
         index.html folder.-->
         <script src="js/snake.js"></script>
         <!--Script-->
+    
     </body>
+    <!--Body-->
+    
 </html>
+<!--HTML-->
