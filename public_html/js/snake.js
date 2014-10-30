@@ -16,6 +16,7 @@ var screenWidth;
 var screenHeight;
 
 var gameState;
+var gameOverMenu;
 
 /* ----------------------------------------------------------------------------
  * Executing Game Code
@@ -45,6 +46,8 @@ function gameInitialize() {
     canvas.height = screenHeight - 30;
     
     document.addEventListener("keydown", keyboardHandler);
+    
+    gameOverMenu = document.getElementById("gameOver");
     
     setState("PLAY");
 }
@@ -172,6 +175,7 @@ function keyboardHandler(event) {
 
 function checkFoodCollisions(snakeHeadX, snakeHeadY) {
     if(snakeHeadX == food.x && snakeHeadY == food.y) {
+        setFoodPosition();
         snake.push({
             x: 0,
             y: 0
@@ -196,4 +200,15 @@ function checkWallCollisions(snakeHeadX, snakeHeadY) {
 
 function setState(state) {
     gameState = state;
+    showMenu(state);
+}
+
+function displayMenu(menu) {
+    menu.style.visibility = "visible";
+}
+
+function showMenu(state) {
+    if(state == "GAME OVER") {
+        displayMenu(gameOverMenu);
+    }
 }
