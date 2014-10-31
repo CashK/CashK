@@ -10,7 +10,40 @@ body {
     border-color: silver;
 }
 
-#gameOver {
+#gameOver, #playHUD {
+    position: absolute;
+    visibility: hidden;
+    border-style: groove;
+    text-align: center;
+    background-color: blue;
+    box-shadow: 10px 10px 5px;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 60px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#restartButton {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#restartButton:hover {
+    background-color: #009900;
+}
+
+#scoreboard {
+    margin: 0px;
+}
+
+#gameStart {
     position: absolute;
     visibility: hidden;
 }
