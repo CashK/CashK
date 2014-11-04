@@ -231,6 +231,10 @@ function checkSnakeCollisions(snakeHeadX, snakeHeadY) {
  * (This Section....)
  * ----------------------------------------------------------------------------
  */
+function setState(state) {
+gameState = state;
+showMenu(state);
+}
 
 function setState(state) {
     gameState = state;
@@ -248,7 +252,9 @@ function displayMenu(menu) {
 }
 
 function showMenu(state) {
-    
+    if(state == "GAME START") {
+        displayMenu(gameStartMenu);
+    }
 }
 
 function displayMenu(menu) {
@@ -274,5 +280,5 @@ function centerMenuPosition(menu) {
 }
 
 function drawScoreboard() {
-    scoreboard.innerHTML = "Length: " + snakeLength;
+    scoreboard.innerHTML = "Length " + snakeLength;
 }
