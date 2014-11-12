@@ -163,8 +163,8 @@ function foodDraw() {
 }
 
 function setFoodPosition() {
-    var randomX = Math.floor(Math.random() * (screenWidth));
-    var randomY = Math.floor(Math.random() * (screenHeight));
+    var randomX = Math.floor(Math.random() * (screenWidth-30));
+    var randomY = Math.floor(Math.random() * (screenHeight-30));
     
     food.x = Math.floor(randomX / snakeSize);
     food.y = Math.floor(randomY / snakeSize);
